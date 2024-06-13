@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- toastify css  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css"
+    integrity="sha512-VSD3lcSci0foeRFRHWdYX4FaLvec89irh5+QAGc00j5AOdow2r5MFPhoPEYBUQdyarXwbzyJEO7Iko7+PnPuBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+  <div class="container">
+    <form id="formQLSV">
+      <h2>Bài tập quản lí sinh viên API</h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Mã sinh viên</label>
+            <input type="text" class="form-control" id="maSinhVien" aria-describedby="helpId"
+              placeholder="nhập mã sinh viên" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Tên sinh viên</label>
+            <input type="text" class="form-control" id="tenSinhVien" aria-describedby="helpId" placeholder="nhập tên" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" aria-describedby="helpId" placeholder="nhập email" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Số điện thoại</label>
+            <input type="text" class="form-control" id="soDienThoai" aria-describedby="helpId"
+              placeholder="nhập số điện thoại" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="" class="form-label">Loại sinh viên</label>
+            <select class="form-select form-select-lg" name="" id="loaiSinhVien">
+              <option value="giỏi">Giỏi</option>
+              <option value="khá">Khá</option>
+              <option value="trung bình">Trung bình</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="mb-3">
+            <label class="form-label">Điểm toán</label>
+            <input type="text" class="form-control" id="diemToan" aria-describedby="helpId"
+              placeholder="nhập điểm toán" />
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="mb-3">
+            <label class="form-label">Điểm lý</label>
+            <input type="text" class="form-control" id="diemLy" aria-describedby="helpId" placeholder="nhập điểm lý" />
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="mb-3">
+            <label class="form-label">Điểm hoá</label>
+            <input type="text" class="form-control" id="diemHoa" aria-describedby="helpId"
+              placeholder="nhập điểm hoá" />
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="mb-3">
+            <label class="form-label">Điểm rèn luyện</label>
+            <input type="text" class="form-control" id="diemRenLuyen" aria-describedby="helpId"
+              placeholder="nhập điểm rèn luyện" />
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-dark">Thêm sinh viên</button>
+          <button type="button" class="btn btn-primary">Cập nhật</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- bs5-table-default  -->
+    <div class="table-responsive mt-5">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Mã sinh viên</th>
+            <th scope="col">Tên sinh viên</th>
+            <th scope="col">Email</th>
+            <th scope="col">Số điện thoại</th>
+            <th scope="col">Loại sinh viên</th>
+            <th scope="col">Điểm trung bình</th>
+            <th scope="col">Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- <tr class="">
+            <td scope="row">R1C1</td>
+            <td>R1C2</td>
+            <td>R1C3</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+  <!-- axios  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+    integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- toastify js  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"
+    integrity="sha512-MnKz2SbnWiXJ/e0lSfSzjaz9JjJXQNb2iykcZkEY2WOzgJIWVqJBFIIPidlCjak0iTH2bt2u1fHQ4pvKvBYy6Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- my js  -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
